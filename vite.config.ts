@@ -22,7 +22,7 @@ export default defineConfig({
     lib: {
       entry: "./src/index.js",
       name: "WoodDeck",
-      fileName: (format) => `woodDeck11.${format}.js`,
+      fileName: (format) => `woodDeck12.${format}.js`,
     },
     // rollupOptions: {
     //   external: ["react", "react-dom"],
@@ -38,12 +38,11 @@ export default defineConfig({
     //   }
     // }
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react"],
       output: {
         format: "umd",
         globals: {
           react: "React",
-          "react-dom": "ReactDOM",
         },
       },
     },
