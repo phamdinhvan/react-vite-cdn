@@ -10,14 +10,14 @@ export default defineConfig({
     lib: {
       entry: "./src/index.js",
       name: "WoodDeck",
-      fileName: (format) => `woodDeck2.${format}.js`,
+      fileName: (format) => `woodDeck4.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", "three", "@react-three/drei", "@react-three/fiber"],
       output: {
         globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
+          react: 'React',
+          'react-dom': 'ReactDOM',
           three: "Three",
           "@react-three/drei": "Drei",
           "@react-three/fiber": "Fiber"

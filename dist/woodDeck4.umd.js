@@ -1,6 +1,6 @@
 (function(global, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("react")) : typeof define === "function" && define.amd ? define(["exports", "react"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.WoodDeck = {}, global.React));
-})(this, function(exports2, require$$0) {
+  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("react"), require("react-dom")) : typeof define === "function" && define.amd ? define(["exports", "react", "react-dom"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.WoodDeck = {}, global.React, global.ReactDOM));
+})(this, function(exports2, require$$0, require$$0$1) {
   "use strict";
   function getDefaultExportFromCjs(x) {
     return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -114,8 +114,8 @@
   process.nextTick = function(fun) {
     var args = new Array(arguments.length - 1);
     if (arguments.length > 1) {
-      for (var i = 1; i < arguments.length; i++) {
-        args[i - 1] = arguments[i];
+      for (var i2 = 1; i2 < arguments.length; i2++) {
+        args[i2 - 1] = arguments[i2];
       }
     }
     queue.push(new Item(fun, args));
@@ -179,13 +179,13 @@
   function requireReactJsxRuntime_production_min() {
     if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
     hasRequiredReactJsxRuntime_production_min = 1;
-    var f = require$$0, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
+    var f = require$$0, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m2 = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
     function q(c, a, g) {
       var b, d = {}, e = null, h = null;
       void 0 !== g && (e = "" + g);
       void 0 !== a.key && (e = "" + a.key);
       void 0 !== a.ref && (h = a.ref);
-      for (b in a) m.call(a, b) && !p.hasOwnProperty(b) && (d[b] = a[b]);
+      for (b in a) m2.call(a, b) && !p.hasOwnProperty(b) && (d[b] = a[b]);
       if (c && c.defaultProps) for (b in a = c.defaultProps, a) void 0 === d[b] && (d[b] = a[b]);
       return { $$typeof: k, type: c, key: e, ref: h, props: d, _owner: n.current };
     }
@@ -915,8 +915,8 @@
               return;
             }
             if (isArray(node)) {
-              for (var i = 0; i < node.length; i++) {
-                var child = node[i];
+              for (var i2 = 0; i2 < node.length; i2++) {
+                var child = node[i2];
                 if (isValidElement(child)) {
                   validateExplicitKey(child, parentType);
                 }
@@ -973,8 +973,8 @@
         function validateFragmentProps(fragment) {
           {
             var keys = Object.keys(fragment.props);
-            for (var i = 0; i < keys.length; i++) {
-              var key = keys[i];
+            for (var i2 = 0; i2 < keys.length; i2++) {
+              var key = keys[i2];
               if (key !== "children" && key !== "key") {
                 setCurrentlyValidatingElement$1(fragment);
                 error("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", key);
@@ -1026,8 +1026,8 @@
               if (children !== void 0) {
                 if (isStaticChildren) {
                   if (isArray(children)) {
-                    for (var i = 0; i < children.length; i++) {
-                      validateChildKeys(children[i], type);
+                    for (var i2 = 0; i2 < children.length; i2++) {
+                      validateChildKeys(children[i2], type);
                     }
                     if (Object.freeze) {
                       Object.freeze(children);
@@ -1111,6 +1111,32 @@
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "read-the-docs", children: "Click on the Vite and React logos to learn more" })
     ] });
   }
+  var client = {};
+  var m = require$$0$1;
+  if (process$1.env.NODE_ENV === "production") {
+    client.createRoot = m.createRoot;
+    client.hydrateRoot = m.hydrateRoot;
+  } else {
+    var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    client.createRoot = function(c, o) {
+      i.usingClientEntryPoint = true;
+      try {
+        return m.createRoot(c, o);
+      } finally {
+        i.usingClientEntryPoint = false;
+      }
+    };
+    client.hydrateRoot = function(c, h, o) {
+      i.usingClientEntryPoint = true;
+      try {
+        return m.hydrateRoot(c, h, o);
+      } finally {
+        i.usingClientEntryPoint = false;
+      }
+    };
+  }
+  exports2.React = require$$0;
   exports2.PluginTest = App;
+  exports2.ReactDOM = client;
   Object.defineProperty(exports2, Symbol.toStringTag, { value: "Module" });
 });

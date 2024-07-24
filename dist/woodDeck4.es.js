@@ -1,4 +1,6 @@
 import require$$0, { useState } from "react";
+import { default as default2 } from "react";
+import require$$0$1 from "react-dom";
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
 }
@@ -176,13 +178,13 @@ var hasRequiredReactJsxRuntime_production_min;
 function requireReactJsxRuntime_production_min() {
   if (hasRequiredReactJsxRuntime_production_min) return reactJsxRuntime_production_min;
   hasRequiredReactJsxRuntime_production_min = 1;
-  var f = require$$0, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
+  var f = require$$0, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m2 = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
   function q(c, a, g) {
     var b, d = {}, e = null, h = null;
     void 0 !== g && (e = "" + g);
     void 0 !== a.key && (e = "" + a.key);
     void 0 !== a.ref && (h = a.ref);
-    for (b in a) m.call(a, b) && !p.hasOwnProperty(b) && (d[b] = a[b]);
+    for (b in a) m2.call(a, b) && !p.hasOwnProperty(b) && (d[b] = a[b]);
     if (c && c.defaultProps) for (b in a = c.defaultProps, a) void 0 === d[b] && (d[b] = a[b]);
     return { $$typeof: k, type: c, key: e, ref: h, props: d, _owner: n.current };
   }
@@ -1108,6 +1110,32 @@ function App() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "read-the-docs", children: "Click on the Vite and React logos to learn more" })
   ] });
 }
+var client = {};
+var m = require$$0$1;
+if (process$1.env.NODE_ENV === "production") {
+  client.createRoot = m.createRoot;
+  client.hydrateRoot = m.hydrateRoot;
+} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  client.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  client.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+}
 export {
-  App as PluginTest
+  App as PluginTest,
+  default2 as React,
+  client as ReactDOM
 };

@@ -1,3 +1,5 @@
 import PluginTest from "./App"
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-export { PluginTest };
+export { PluginTest, React, ReactDOM };
