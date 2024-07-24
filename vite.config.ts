@@ -6,12 +6,11 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 export default defineConfig({
   plugins: [react(), nodePolyfills()],
   build: {
-    // minify: false,
+    minify: false,
     lib: {
       entry: "./src/index.js",
       name: "WoodDeck",
-      fileName: (format) => `woodDeck.${format}.js`,
-      // formats: ["es"]
+      fileName: (format) => `woodDeck1.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", "three", "@react-three/drei", "@react-three/fiber"],
