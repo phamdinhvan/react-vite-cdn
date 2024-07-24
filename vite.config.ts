@@ -10,21 +10,18 @@ export default defineConfig({
   build: {
     minify: false,
     lib: {
-      entry: "./src/index.js",
+      entry: "./src/main.tsx",
       name: "WoodDeck",
-      fileName: (format) => `woodDeck6.${format}.js`,
+      fileName: (format) => `woodDeck8.${format}.js`,
     },
-    // rollupOptions: {
-    //   external: ["react", "react-dom", "three", "@react-three/drei", "@react-three/fiber"],
-    //   output: {
-    //     globals: {
-    //       react: 'React',
-    //       'react-dom': 'ReactDOM',
-    //       three: "Three",
-    //       "@react-three/drei": "Drei",
-    //       "@react-three/fiber": "Fiber"
-    //     }
-    //   }
-    // }
+    rollupOptions: {
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        }
+      }
+    }
   },
 });
