@@ -14,15 +14,12 @@ export default defineConfig({
       },
     }),
   ],
-  define: {
-    "process.env": {},
-  },
   build: {
     minify: false,
     lib: {
       entry: "./src/index.js",
       name: "WoodDeck",
-      fileName: (format) => `woodDeck12.${format}.js`,
+      fileName: (format) => `woodDeck13.${format}.js`,
     },
     // rollupOptions: {
     //   external: ["react", "react-dom"],
@@ -43,6 +40,10 @@ export default defineConfig({
         format: "umd",
         globals: {
           react: "React",
+        },
+        paths: {
+          react:
+            "https://unpkg.com/browse/react@18.0.0/umd/react.production.min.js",
         },
       },
     },

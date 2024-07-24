@@ -1,4 +1,4 @@
-import require$$0, { useState } from "react";
+import require$$0, { useState } from "https://unpkg.com/browse/react@18.0.0/umd/react.production.min.js";
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production_min = {};
 /**
@@ -30,21 +30,20 @@ function requireReactJsxRuntime_production_min() {
   return reactJsxRuntime_production_min;
 }
 var reactJsxRuntime_development = {};
+/**
+ * @license React
+ * react-jsx-runtime.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 var hasRequiredReactJsxRuntime_development;
 function requireReactJsxRuntime_development() {
   if (hasRequiredReactJsxRuntime_development) return reactJsxRuntime_development;
   hasRequiredReactJsxRuntime_development = 1;
-  var define_process_env_default2 = {};
-  /**
-   * @license React
-   * react-jsx-runtime.development.js
-   *
-   * Copyright (c) Facebook, Inc. and its affiliates.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE file in the root directory of this source tree.
-   */
-  if (define_process_env_default2.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== "production") {
     (function() {
       var React = require$$0;
       var REACT_ELEMENT_TYPE = Symbol.for("react.element");
@@ -926,8 +925,7 @@ function requireReactJsxRuntime_development() {
   }
   return reactJsxRuntime_development;
 }
-var define_process_env_default = {};
-if (define_process_env_default.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   jsxRuntime.exports = requireReactJsxRuntime_production_min();
 } else {
   jsxRuntime.exports = requireReactJsxRuntime_development();

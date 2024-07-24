@@ -1,5 +1,5 @@
 (function(global, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("react")) : typeof define === "function" && define.amd ? define(["exports", "react"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.WoodDeck = {}, global.React));
+  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("https://unpkg.com/browse/react@18.0.0/umd/react.production.min.js")) : typeof define === "function" && define.amd ? define(["exports", "https://unpkg.com/browse/react@18.0.0/umd/react.production.min.js"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.WoodDeck = {}, global.React));
 })(this, function(exports2, require$$0) {
   "use strict";
   var jsxRuntime = { exports: {} };
@@ -33,21 +33,20 @@
     return reactJsxRuntime_production_min;
   }
   var reactJsxRuntime_development = {};
+  /**
+   * @license React
+   * react-jsx-runtime.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
   var hasRequiredReactJsxRuntime_development;
   function requireReactJsxRuntime_development() {
     if (hasRequiredReactJsxRuntime_development) return reactJsxRuntime_development;
     hasRequiredReactJsxRuntime_development = 1;
-    var define_process_env_default2 = {};
-    /**
-     * @license React
-     * react-jsx-runtime.development.js
-     *
-     * Copyright (c) Facebook, Inc. and its affiliates.
-     *
-     * This source code is licensed under the MIT license found in the
-     * LICENSE file in the root directory of this source tree.
-     */
-    if (define_process_env_default2.NODE_ENV !== "production") {
+    if (process.env.NODE_ENV !== "production") {
       (function() {
         var React = require$$0;
         var REACT_ELEMENT_TYPE = Symbol.for("react.element");
@@ -929,8 +928,7 @@
     }
     return reactJsxRuntime_development;
   }
-  var define_process_env_default = {};
-  if (define_process_env_default.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === "production") {
     jsxRuntime.exports = requireReactJsxRuntime_production_min();
   } else {
     jsxRuntime.exports = requireReactJsxRuntime_development();
