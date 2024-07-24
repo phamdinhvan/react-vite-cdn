@@ -1,3 +1,3 @@
-import Plugin from "./App"
+import PluginTest from "./App"
 
-export { Plugin };
+export { PluginTest };

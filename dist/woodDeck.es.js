@@ -758,5 +758,5 @@ function $r() {
   ] });
 }
 export {
-  $r as Plugin
+  $r as PluginTest
 };
