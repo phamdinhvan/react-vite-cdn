@@ -1,5 +1,5 @@
-import require$$0, { useState } from "react";
-import require$$0$1 from "react-dom";
+import require$$0, { useState } from "https://unpkg.com/browse/react@18.0.0/umd/react.production.min.js";
+import require$$0$1 from "https://unpkg.com/browse/react-dom@18.0.0/umd/react-dom.production.min.js";
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production_min = {};
 /**

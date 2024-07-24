@@ -1,5 +1,5 @@
 (function(global, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("react"), require("react-dom")) : typeof define === "function" && define.amd ? define(["exports", "react", "react-dom"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.WoodDeck = {}, global.React, global.ReactDOM));
+  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("https://unpkg.com/browse/react@18.0.0/umd/react.production.min.js"), require("https://unpkg.com/browse/react-dom@18.0.0/umd/react-dom.production.min.js")) : typeof define === "function" && define.amd ? define(["exports", "https://unpkg.com/browse/react@18.0.0/umd/react.production.min.js", "https://unpkg.com/browse/react-dom@18.0.0/umd/react-dom.production.min.js"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.WoodDeck = {}, global.require$$0, global.require$$0$1));
 })(this, function(exports2, require$$0, require$$0$1) {
   "use strict";
   var jsxRuntime = { exports: {} };
